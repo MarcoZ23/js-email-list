@@ -6,11 +6,20 @@ generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
 
 
 const email = "https://flynn.boolean.careers/exercises/api/random/mail" 
+const emailList = []
 
 
-fetch(email)
-.then (response => response.json())
-.then (data => {
-    console.log(data);
+    
+
+for (let i = 0; i < 10; i++) {
+    fetch(email)
+    .then (response => response.json())
+    .then (data => {
+        console.log(data.response);
+    emailList.push(data.response)
     
 })
+}
+
+console.log(emailList);
+
